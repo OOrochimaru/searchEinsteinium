@@ -23,6 +23,7 @@
       <li class="list-group-item" *ngFor="let result of movies">
        <p class="float-left">{{result.title}}</p> 
         <a class="float-right" href="{{result.download_link}}">Download</a>
+        <a class="float-right" [routerLink]="['/playoptions]'" [queryParams]="v: result.url">Play</a>
       </li>
       <p-paginator [rows]="5" totalRecords="{{totalCount}}" (onPageChange)="paginate($event, search.value)"></p-paginator>
     </ul>

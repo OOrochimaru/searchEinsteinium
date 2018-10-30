@@ -39,11 +39,10 @@
         </li>
       </ul>
       <li class="list-group-item" *ngFor="let result of pagedSeasons">
-        <p class="float-left">{{result.title}}</p>
-        <a class="float-left" href="{{result.download_link}}">Download</a>
-        <a class="float-right" [routerLink]="['/playoptions]'" [queryParams]="{v: result.url}">Play</a>
+        {{result.title}}
+        <a class="float-right btn btn-small btn-default" [routerLink]="['/play']" [queryParams]="{ v:result.url }" style="margin-left:5px">Play</a>
+        {{result.name}} <a class="float-right btn btn-small btn-default" href="{{result.url}}">Download</a>
       </li>
-
     </ul>
   </div>
 </div>
